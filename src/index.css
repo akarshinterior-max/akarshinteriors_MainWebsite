@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+/* Let Tailwind Preflight handle the reset! */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background: var(--color-porcelain);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), serif;
+  font-weight: 400;
+}
+
+::selection {
+  background: var(--color-bronze);
+  color: white;
+}
+
+/* ==========================
+   CUSTOM HERO ANIMATIONS
+========================== */
+
+@keyframes fadeInPremium {
+  0% { 
+    opacity: 0; 
+    filter: blur(4px); 
+    transform: scale(0.98); 
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0); 
+    transform: scale(1); 
+  }
+}
+
+@keyframes jetSpeedDrop {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-premium-fade {
+  animation: fadeInPremium 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-jet-speed {
+  /* The cubic-bezier here gives it that fast, snappy landing */
+  animation: jetSpeedDrop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0; /* Keeps it hidden until the animation starts */
+  animation-delay: 1.2s; /* Waits for the Akarsh Interiors fade to almost finish */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}

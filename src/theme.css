@@ -1,0 +1,16 @@
+@theme {
+  /* Colors */
+  --color-porcelain: #EDE9E1;
+  --color-porcelain-2: #E4DFD4;
+
+  --color-ink: #211F1B;
+  --color-ink-soft: #4A463E;
+
+  --color-stone: #C9C2B2;
+
+  --color-bronze: #A68A5B;
+
+  /* Fonts */
+  --font-heading: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+}
