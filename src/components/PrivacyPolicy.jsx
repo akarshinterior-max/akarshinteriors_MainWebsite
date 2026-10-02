@@ -184,6 +184,10 @@ export default function PrivacyPolicy() {
   const [activeId, setActiveId] = useState(sections[0].id);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const observers = sections.map(({ id }) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -210,7 +214,7 @@ export default function PrivacyPolicy() {
       style={{ backgroundColor: COLORS.porcelain, color: COLORS.ink }}
     >
       <div className="max-w-[1200px] mx-auto">
-        {/* Header */}
+  
         <div
           className="pb-10 mb-16 md:mb-20 border-b"
           style={{ borderColor: `${COLORS.ink}18` }}
@@ -239,9 +243,8 @@ export default function PrivacyPolicy() {
           </p>
         </div>
 
-        {/* Body — sticky index (desktop) + content */}
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-14 lg:gap-20">
-          {/* Sticky section index */}
+
           <nav className="hidden lg:block">
             <div className="sticky top-32">
               <p
@@ -291,13 +294,11 @@ export default function PrivacyPolicy() {
             </div>
           </nav>
 
-          {/* Sections */}
           <div>
             {sections.map((section) => (
               <Section key={section.id} section={section} />
             ))}
 
-            {/* Closing contact card */}
             <div
               className="mt-14 rounded-xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
               style={{ backgroundColor: COLORS.ink }}

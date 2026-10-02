@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import img1 from '../assets/images/gallery/img1.jpg';
 import img2 from '../assets/images/gallery/img2.jpg';
@@ -40,6 +40,18 @@ const allImages = [
 export default function GalleryPage({ setCurrentPage }) {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Lock background scroll when the image modal is open
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedImage]);
+
   const galleryItems = allImages.map((imgSrc, index) => ({
     id: index + 1,
     title: `Sanctuary Masterwork Frame 0${index + 1}`,
@@ -49,7 +61,7 @@ export default function GalleryPage({ setCurrentPage }) {
 
   return (
     <div className="w-full min-h-screen bg-[#F9F8F6] text-[#1A1815] pt-32 pb-24 relative overflow-hidden">
-=
+
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-[#A68A5B] rounded-full blur-[240px] opacity-[0.04] pointer-events-none"></div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
