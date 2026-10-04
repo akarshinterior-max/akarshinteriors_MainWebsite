@@ -161,12 +161,13 @@ export default function FeaturedProjects() {
                       {item.title}
                     </h3>
                   </div>
-                  <a 
-                    href={`#service-${item.id}`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#EDE9E1] text-[#211F1B] px-8 py-3.5 text-xs sm:text-sm tracking-[0.1em] uppercase font-semibold transition-all duration-300 hover:bg-[#A68A5B] hover:text-[#ffffff] shadow-xl shrink-0"
-                  >
-                    Explore Projects
-                  </a>
+
+                  {/* Non-clickable aesthetic badge */}
+                  <div className="inline-flex items-center justify-center rounded-full border border-[#EDE9E1]/30 bg-[#211F1B]/40 backdrop-blur-md text-[#EDE9E1] px-7 py-3 text-xs sm:text-sm tracking-[0.15em] uppercase font-light shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#A68A5B] mr-2"></span>
+                    Akarsh Standard
+                  </div>
+
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function ContactSection() {
 
   const handleEmailClick = (e) => {
     e.preventDefault();
-    const recipient = "consultation@akarshenterprises.com"; // Replace with your actual email
+    const recipient = "akarshinterior@gmail.com";
     const subject = encodeURIComponent(`Interior Design Consultation Inquiry - ${formData.name || "Client"}`);
     const body = encodeURIComponent(
       `Hello Akarsh Interiors Team,\n\nI am interested in discussing an interior design project.\n\nDetails:\n- Name: ${formData.name}\n- Phone: ${formData.phone}\n- City: ${formData.city}\n- Service Type: ${formData.service}\n\nLooking forward to hearing from you.`
