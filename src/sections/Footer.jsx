@@ -32,14 +32,42 @@ export default function Footer({ setCurrentPage }) {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 py-20 border-b border-[#EDE9E1]/10">
+        {/* Founder & Principal Spotlight Banner */}
+        <div className="py-12 my-12 border-y border-[#EDE9E1]/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#211F1B]/40 px-8 md:px-12 rounded-2xl backdrop-blur-sm">
+          <div className="lg:col-span-8 space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-[#A68A5B]"></span>
+              <span className="uppercase tracking-[0.2em] text-[11px] text-[#A68A5B] font-semibold">
+                Principal Visionary & Founder
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-normal text-[#EDE9E1]" style={{ fontFamily: "'Fraunces', serif" }}>
+              Prasad Reddy
+            </h3>
+            <p className="text-sm font-light text-[#EDE9E1]/70 leading-relaxed max-w-2xl">
+              Driven by an uncompromising obsession with detail, Prasad Reddy personally oversees every blueprint and spatial transition. His relentless dedication transforms ordinary structures into timeless emotional sanctuaries across Telangana and Andhra Pradesh.
+            </p>
+          </div>
+          <div className="lg:col-span-4 flex lg:justify-end">
+            <div className="border-l border-[#A68A5B]/30 pl-6 py-2">
+              <p className="text-xs uppercase tracking-[0.15em] text-[#A68A5B] font-medium mb-1">
+                The Founder's Promise
+              </p>
+              <p className="text-xs font-light text-[#EDE9E1]/60 italic" style={{ fontFamily: "'Fraunces', serif" }}>
+                "We do not just build interiors; we curate the atmosphere where your life’s finest moments happen."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-20 border-b border-[#EDE9E1]/10">
 
           <div className="lg:col-span-2 space-y-6">
             <h3 className="text-2xl font-normal tracking-wide text-[#EDE9E1]" style={{ fontFamily: "'Fraunces', serif" }}>
               Akarsh Interiors Studio
             </h3>
             <p className="text-sm font-light text-[#EDE9E1]/60 leading-relaxed max-w-sm">
-              Transforming architectural blueprints into emotional sanctuaries. Delivering uncompromised luxury, absolute transparency, and meticulous execution across Telangana and Andhra Pradesh.
+              Transforming architectural blueprints into emotional sanctuaries. Delivering uncompromised luxury, absolute transparency, and meticulous execution under the personal direction of Prasad Reddy.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#A68A5B]/10 border border-[#A68A5B]/30 text-xs text-[#A68A5B] font-medium tracking-wider uppercase">
               <span>★</span> The Akarsh Guarantee Verified
@@ -97,7 +125,7 @@ export default function Footer({ setCurrentPage }) {
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Akarsh Interiors Studio. All rights reserved.</p>
             <span className="hidden sm:inline">•</span>
-            <p className="text-[#A68A5B]/80 font-medium tracking-wide">Defining India's Luxury Living.</p>
+            <p className="text-[#A68A5B]/80 font-medium tracking-wide">Led by Prasad Reddy · Defining India's Luxury Living.</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-8">

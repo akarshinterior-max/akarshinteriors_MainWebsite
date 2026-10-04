@@ -132,7 +132,7 @@ const TITLE = "AKARSH INTERIORS";
 const EASE = "cubic-bezier(0.22,1,0.36,1)";
 
 export default function IntroLoader({ onComplete }) {
-  // idle -> logo -> text -> exit -> done
+
   const [phase, setPhase] = useState("idle");
   const [skip, setSkip] = useState(false);
 
@@ -149,13 +149,13 @@ export default function IntroLoader({ onComplete }) {
 
     const raf = requestAnimationFrame(() => setPhase("logo"));
     const t1 = setTimeout(() => setPhase("text"), 1300);
-    const t2 = setTimeout(() => setPhase("exit"), 3400);
+    const t2 = setTimeout(() => setPhase("exit"), 3800);
     const t3 = setTimeout(() => {
       setPhase("done");
       document.body.style.overflow = "";
       sessionStorage.setItem(STORAGE_KEY, "true");
       onComplete?.();
-    }, 4500);
+    }, 4900);
 
     return () => {
       cancelAnimationFrame(raf);
@@ -283,7 +283,25 @@ export default function IntroLoader({ onComplete }) {
           })}
         </h1>
 
-        {/* tagline */}
+        <p
+          className="mt-3 whitespace-nowrap"
+          style={{
+            fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+            fontStyle: "italic",
+            fontWeight: 400,
+            fontSize: "clamp(13px, 1.8vw, 17px)",
+            letterSpacing: "0.12em",
+            color: "#7A6845",
+            opacity: textIn ? 1 : 0,
+            transform: textIn ? "translateY(0)" : "translateY(8px)",
+            transition: exiting
+              ? "opacity 0.4s ease"
+              : `opacity 0.9s ease 1.3s, transform 0.9s ${EASE} 1.3s`,
+          }}
+        >
+          by Prasad Reddy
+        </p>
+
         <p
           className="mt-4 uppercase whitespace-nowrap"
           style={{
@@ -295,7 +313,7 @@ export default function IntroLoader({ onComplete }) {
             transform: textIn ? "translateY(0)" : "translateY(8px)",
             transition: exiting
               ? "opacity 0.4s ease"
-              : "opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s",
+              : "opacity 0.8s ease 1.8s, transform 0.8s ease 1.8s",
           }}
         >
           Luxury Interior Design
